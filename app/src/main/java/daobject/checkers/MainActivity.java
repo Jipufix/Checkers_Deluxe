@@ -1,14 +1,24 @@
 package daobject.checkers;
 
-import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import daobject.checkers.GameFramework.GameMainActivity;
+import daobject.checkers.GameFramework.gameConfiguration.GameConfig;
+import daobject.checkers.GameFramework.LocalGame;
+import daobject.checkers.GameFramework.infoMessage.GameState;
+
+public class MainActivity extends GameMainActivity {
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public GameConfig createDefaultConfig() {
+        return null;
+    }
+
+    @Override
+    public LocalGame createLocalGame(GameState gameState) {
+        return null;
     }
 }
