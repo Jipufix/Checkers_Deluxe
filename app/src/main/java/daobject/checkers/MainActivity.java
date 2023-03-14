@@ -1,16 +1,12 @@
 package daobject.checkers;
 
 
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-
-import daobject.checkers.GameFramework.GameMainActivity;
-import daobject.checkers.GameFramework.gameConfiguration.GameConfig;
-import daobject.checkers.GameFramework.LocalGame;
-import daobject.checkers.GameFramework.infoMessage.GameState;
+import edu.up.cs301.game.GameFramework.GameMainActivity;
+import edu.up.cs301.game.GameFramework.gameConfiguration.GameConfig;
+import edu.up.cs301.game.GameFramework.LocalGame;
+import edu.up.cs301.game.GameFramework.infoMessage.GameState;
 
 public class MainActivity extends GameMainActivity {
-
 
     @Override
     public GameConfig createDefaultConfig() {
@@ -19,6 +15,7 @@ public class MainActivity extends GameMainActivity {
 
     @Override
     public LocalGame createLocalGame(GameState gameState) {
+
         return null;
     }
 }

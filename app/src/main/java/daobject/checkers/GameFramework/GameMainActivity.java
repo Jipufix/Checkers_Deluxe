@@ -27,6 +27,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import daobject.checkers.GameFramework.gameConfiguration.GameConfig;
+import daobject.checkers.GameFramework.infoMessage.GameState;
 import edu.up.cs301.game.GameFramework.gameConfiguration.GameConfig;
 import edu.up.cs301.game.GameFramework.gameConfiguration.GamePlayerType;
 import edu.up.cs301.game.GameFramework.infoMessage.GameState;
@@ -107,12 +109,12 @@ public abstract class GameMainActivity extends Activity implements
      */
     /**
      * Creates a default, game-specific configuration for the current game.
-     *
+     * <p>
      * IMPORTANT: The default configuration must be a legal configuration!
      *
      * @return an instance of the GameConfig class that defines a default
-     *         configuration for this game. (The default may be subsequently
-     *         modified by the user if this is allowed.)
+     * configuration for this game. (The default may be subsequently
+     * modified by the user if this is allowed.)
      */
     public abstract GameConfig createDefaultConfig();
 
@@ -849,6 +851,8 @@ public abstract class GameMainActivity extends Activity implements
     private String settingsTabString(){
         return this.getResources().getString(R.string.settings_tab);
     }
+
+    public abstract LocalGame createLocalGame(GameState gameState);
 
 
     /**
