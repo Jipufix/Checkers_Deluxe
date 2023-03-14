@@ -1,7 +1,7 @@
 package daobject.checkers;
 
 
-import daobject.checkers.GameFramework.GameMainActivity;
+import edu.up.cs301.game.GameFramework.GameMainActivity;
 
 public abstract class MainActivity extends GameMainActivity {
 
