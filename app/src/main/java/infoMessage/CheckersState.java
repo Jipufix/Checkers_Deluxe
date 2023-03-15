@@ -1,5 +1,14 @@
 package infoMessage;
 
+/**
+ * Contains the state of the game :)
+ *
+ * @author   Ashton Char
+ * @author   Eli Marcelino
+ * @author   Matt David
+ * @version  March 2023
+ */
+
 import daobject.checkers.Tile;
 import edu.up.cs301.game.GameFramework.infoMessage.GameState;
 
@@ -21,6 +30,7 @@ public class CheckersState extends GameState {
     public CheckersState() {
         board = new Tile[HEIGHT][WIDTH];
         isTurn = 0;
+        timeElapsed = 0;
     }//ctor
 
     /**
@@ -37,13 +47,13 @@ public class CheckersState extends GameState {
         }
 
         isTurn = original.isTurn;
+        timeElapsed = original.timeElapsed;
     }//ctor
 
     @Override
     public String toString() {
-        String result = "";
 
-        result += "PlayerTurn: ";
+        String result = "PlayerTurn: ";
         if (isTurn == 0) {
             result += "Red's turn";
         } else if (isTurn == 1) {
