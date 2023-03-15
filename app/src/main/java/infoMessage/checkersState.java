@@ -65,4 +65,23 @@ public class checkersState extends GameState {
 
         return result;
     }
+
+
+    public boolean validMove (){
+        // validMove outputs T or F where user clicked
+        // false if out of bounds or not empty
+        // else true
+
+        for (int i = 0; i < HEIGHT; i++) {
+            for (int j = 0; j < WIDTH; j++) {
+                if (i < 0 || j < 0 || i > HEIGHT || j > HEIGHT) {
+                    return false;
+                }
+                else if (board[i][j].Value)
+
+            }
+        }
+
+        return false;
+    }
 }
