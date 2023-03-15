@@ -4,7 +4,7 @@ import edu.up.cs301.game.GameFramework.infoMessage.GameState;
 
 public class CheckersState extends GameState {
 
-    // Board Dimensions
+    // Board Dimensions //
     private static final int WIDTH = 8, HEIGHT = 8;
 
     ///////////////////////////////////////////////////
