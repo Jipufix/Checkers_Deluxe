@@ -16,12 +16,20 @@ public class Tile {
         BLACK,
     }
 
-    public Value inTile;
+    private Value inTile;
 
-    boolean isKing;
+    private boolean isKing;
     public Tile() {
         inTile = Value.EMPTY;
         isKing = false;
     }// default ctor
+
+    public Value getInTile() {
+        return inTile;
+    }
+
+    public boolean isKing() {
+        return isKing;
+    }
 
 }

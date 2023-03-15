@@ -68,7 +68,7 @@ public class CheckersState extends GameState {
         for (int i = 0; i < HEIGHT; i++) {
             for (int j = 0; j < WIDTH; j++) {
                 String board1 = "";
-                switch (board[i][j].inTile) {
+                switch (board[i][j].getInTile()) {
                     case EMPTY: {
                         board1 = " ";
                         break;
@@ -84,7 +84,6 @@ public class CheckersState extends GameState {
                 }
                 result += " " + board1;
             }
-
             result += "\n ";
         }
 
