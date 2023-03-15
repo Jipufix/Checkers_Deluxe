@@ -77,7 +77,9 @@ public class checkersState extends GameState {
                 if (i < 0 || j < 0 || i > HEIGHT || j > HEIGHT) {
                     return false;
                 }
-                else if (board[i][j].Value)
+                else if (board[i][j].Value){
+
+                }
 
             }
         }
