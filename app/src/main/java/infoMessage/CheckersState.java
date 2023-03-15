@@ -43,9 +43,8 @@ public class CheckersState extends GameState {
 
     @Override
     public String toString() {
-        String result = "";
 
-        result += "PlayerTurn: ";
+        String result = "PlayerTurn: ";
         if (isTurn == 0) {
             result += "Red's turn";
         } else if (isTurn == 1) {
