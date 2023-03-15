@@ -11,14 +11,14 @@ public class checkersState extends GameState {
     // ************ Instance Variables ************* //
     ///////////////////////////////////////////////////
     private Tile[][] board;
-    private boolean isTurn; // True when player's turn
+    private int isTurn; // 0 if Red's Turn, 1 if Black's Turn
 
     /**
      *  Default constructor for the game state
      */
     public checkersState() {
         board = new Tile[HEIGHT][WIDTH];
-        isTurn = true;
+        isTurn = 0;
     }//ctor
 
     /**
@@ -37,4 +37,8 @@ public class checkersState extends GameState {
         isTurn = original.isTurn;
     }//ctor
 
+    @Override
+    public void toString(checkersState original) {
+
+    }
 }
