@@ -38,7 +38,7 @@ public class checkersState extends GameState {
     }//ctor
 
     @Override
-    public void toString(checkersState original) {
+    public void toString(GameState original) {
 
     }
 }
