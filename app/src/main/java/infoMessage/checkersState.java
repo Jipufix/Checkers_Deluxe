@@ -3,6 +3,15 @@ package infoMessage;
 import daobject.checkers.Tile;
 import edu.up.cs301.game.GameFramework.infoMessage.GameState;
 
+/**
+ * Contains the state of a Checkers game.  Sent by the game when
+ * a player wants to enquire about the state of the game.
+ *
+ * @author Ashton Char
+ * @author Matt David
+ * @author Elias Marcelino
+ * @version March 2023
+ */
 public class checkersState extends GameState {
 
     // Board Dimensions //
@@ -22,6 +31,7 @@ public class checkersState extends GameState {
     public checkersState() {
         board = new Tile[HEIGHT][WIDTH];
         isTurn = 0;
+        timeElapsed = 0;
     }//ctor
 
     /**
@@ -36,6 +46,8 @@ public class checkersState extends GameState {
                 board[i][j] = original.board[i][j];
             }
         }
+
+        timeElapsed = original.timeElapsed;
 
         isTurn = original.isTurn;
     }//ctor
