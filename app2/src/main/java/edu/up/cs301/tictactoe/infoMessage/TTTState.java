@@ -50,7 +50,7 @@ public class TTTState extends GameState implements Serializable {
      * Copy constructor for class TTTState
      *  
      * @param original
-     * 		the TTTState object that we want to clong
+     * 		the TTTState object that we want to clone
      */
     public TTTState(TTTState original)
     {
