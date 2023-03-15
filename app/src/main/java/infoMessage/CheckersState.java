@@ -57,8 +57,24 @@ public class CheckersState extends GameState {
 
         for (int i = 0; i < HEIGHT; i++) {
             for (int j = 0; j < WIDTH; j++) {
-                result += board[i][j] + " ";
+                String board1 = "";
+                switch (board[i][j].inTile) {
+                    case EMPTY: {
+                        board1 = " ";
+                        break;
+                    }
+                    case BLACK: {
+                        board1 = "B";
+                        break;
+                    }
+                    case RED: {
+                        board1 = "R";
+                        break;
+                    }
+                }
+                result += " " + board1;
             }
+
             result += "\n ";
         }
 

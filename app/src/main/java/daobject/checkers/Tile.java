@@ -1,15 +1,18 @@
 package daobject.checkers;
 
 public class Tile {
-    enum Value {
+    public enum Value {
         EMPTY,
         RED,
         BLACK,
-        RED_KING,
-        BLACK_KING,
     }
 
-    public Tile() {
+    public Value inTile;
 
+    boolean isKing;
+    public Tile() {
+        inTile = Value.EMPTY;
+        isKing = false;
     }// default ctor
+
 }
