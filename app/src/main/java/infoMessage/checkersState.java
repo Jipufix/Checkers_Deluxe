@@ -1,5 +1,6 @@
-package daobject.checkers;
+package infoMessage;
 
+import daobject.checkers.Tile;
 import edu.up.cs301.game.GameFramework.infoMessage.GameState;
 
 public class CheckersState extends GameState {
@@ -12,6 +13,8 @@ public class CheckersState extends GameState {
     ///////////////////////////////////////////////////
     private Tile[][] board;
     private int isTurn; // 0 if Red's Turn, 1 if Black's Turn
+
+    private double timeElapsed;
 
     /**
      *  Default constructor for the game state
@@ -39,6 +42,27 @@ public class CheckersState extends GameState {
 
     @Override
     public String toString() {
-        return null;
+        String result = "";
+
+        result += "PlayerTurn: ";
+        if (isTurn == 0) {
+            result += "Red's turn";
+        } else if (isTurn == 1) {
+            result += "Black's turn";
+        } else {
+            result += "Invalid option";
+        }
+        result += "\n ";
+
+        result += "Time Elapsed: " + timeElapsed + "\n ";
+
+        for (int i = 0; i < HEIGHT; i++) {
+            for (int j = 0; j < WIDTH; j++) {
+                result += board[i][j] + " ";
+            }
+            result += "\n ";
+        }
+
+        return result;
     }
 }
