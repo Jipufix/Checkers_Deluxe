@@ -1,4 +1,4 @@
 package daobject.checkers;
 
-public class checkersView {
+public class CheckersView {
 }

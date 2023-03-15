@@ -3,7 +3,7 @@ package infoMessage;
 import daobject.checkers.Tile;
 import edu.up.cs301.game.GameFramework.infoMessage.GameState;
 
-public class checkersState extends GameState {
+public class CheckersState extends GameState {
 
     // Board Dimensions //
     private static final int WIDTH = 8, HEIGHT = 8;
@@ -13,13 +13,12 @@ public class checkersState extends GameState {
     ///////////////////////////////////////////////////
     private Tile[][] board;
     private int isTurn; // 0 if Red's Turn, 1 if Black's Turn
-
     private double timeElapsed;
 
     /**
      *  Default constructor for the game state
      */
-    public checkersState() {
+    public CheckersState() {
         board = new Tile[HEIGHT][WIDTH];
         isTurn = 0;
     }//ctor
@@ -29,7 +28,7 @@ public class checkersState extends GameState {
      *
      * @param original   The game state object we are copying over
      */
-    public checkersState(checkersState original) {
+    public CheckersState(CheckersState original) {
         board = new Tile[HEIGHT][WIDTH];
         for (int i = 0; i < HEIGHT; i++) {
             for (int j = 0; j < WIDTH; j++) {
