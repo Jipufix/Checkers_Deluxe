@@ -21,6 +21,7 @@ public class CheckersState extends GameState {
     public CheckersState() {
         board = new Tile[HEIGHT][WIDTH];
         isTurn = 0;
+        timeElapsed = 0;
     }//ctor
 
     /**
@@ -37,6 +38,7 @@ public class CheckersState extends GameState {
         }
 
         isTurn = original.isTurn;
+        timeElapsed = original.timeElapsed;
     }//ctor
 
     @Override
