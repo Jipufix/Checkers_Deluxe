@@ -1,4 +1,4 @@
 package daobject.checkers;
 
-public class checkersModel {
+public class CheckersModel {
 }

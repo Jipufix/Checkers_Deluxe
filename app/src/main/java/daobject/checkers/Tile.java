@@ -1,15 +1,35 @@
 package daobject.checkers;
 
+/**
+ * The individual tiles on the board
+ *
+ * @author   Ashton Char
+ * @author   Eli Marcelino
+ * @author   Matt David
+ * @version  March 2023
+ */
+
 public class Tile {
-    enum Value {
+    public enum Value {
         EMPTY,
         RED,
         BLACK,
-        RED_KING,
-        BLACK_KING,
     }
 
-    public Tile() {
+    private Value inTile;
 
+    private boolean isKing;
+    public Tile() {
+        inTile = Value.EMPTY;
+        isKing = false;
     }// default ctor
+
+    public Value getInTile() {
+        return inTile;
+    }
+
+    public boolean isKing() {
+        return isKing;
+    }
+
 }

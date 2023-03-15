@@ -1,9 +1,18 @@
 package infoMessage;
 
+/**
+ * Contains the state of the game :)
+ *
+ * @author   Ashton Char
+ * @author   Eli Marcelino
+ * @author   Matt David
+ * @version  March 2023
+ */
+
 import daobject.checkers.Tile;
 import edu.up.cs301.game.GameFramework.infoMessage.GameState;
 
-public class checkersState extends GameState {
+public class CheckersState extends GameState {
 
     // Board Dimensions //
     private static final int WIDTH = 8, HEIGHT = 8;
@@ -13,15 +22,15 @@ public class checkersState extends GameState {
     ///////////////////////////////////////////////////
     private Tile[][] board;
     private int isTurn; // 0 if Red's Turn, 1 if Black's Turn
-
     private double timeElapsed;
 
     /**
      *  Default constructor for the game state
      */
-    public checkersState() {
+    public CheckersState() {
         board = new Tile[HEIGHT][WIDTH];
         isTurn = 0;
+        timeElapsed = 0;
     }//ctor
 
     /**
@@ -29,7 +38,7 @@ public class checkersState extends GameState {
      *
      * @param original   The game state object we are copying over
      */
-    public checkersState(checkersState original) {
+    public CheckersState(CheckersState original) {
         board = new Tile[HEIGHT][WIDTH];
         for (int i = 0; i < HEIGHT; i++) {
             for (int j = 0; j < WIDTH; j++) {
@@ -38,13 +47,13 @@ public class checkersState extends GameState {
         }
 
         isTurn = original.isTurn;
+        timeElapsed = original.timeElapsed;
     }//ctor
 
     @Override
     public String toString() {
-        String result = "";
 
-        result += "PlayerTurn: ";
+        String result = "PlayerTurn: ";
         if (isTurn == 0) {
             result += "Red's turn";
         } else if (isTurn == 1) {
@@ -58,7 +67,22 @@ public class checkersState extends GameState {
 
         for (int i = 0; i < HEIGHT; i++) {
             for (int j = 0; j < WIDTH; j++) {
-                result += board[i][j] + " ";
+                String board1 = "";
+                switch (board[i][j].getInTile()) {
+                    case EMPTY: {
+                        board1 = " ";
+                        break;
+                    }
+                    case BLACK: {
+                        board1 = "B";
+                        break;
+                    }
+                    case RED: {
+                        board1 = "R";
+                        break;
+                    }
+                }
+                result += " " + board1;
             }
             result += "\n ";
         }

@@ -18,7 +18,7 @@ import edu.up.cs301.tictactoe.players.TTTHumanPlayer1;
 import edu.up.cs301.tictactoe.players.TTTHumanPlayer2;
 
 /**
- * this is the primary activity for Counter game
+ * The primary activity for Counter game
  * 
  * @author Steven R. Vegdahl
  * @author Eric Imperio
