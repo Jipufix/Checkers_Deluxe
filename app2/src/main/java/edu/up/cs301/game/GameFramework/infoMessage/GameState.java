@@ -55,6 +55,4 @@ public abstract class GameState extends GameInfo {
     public String toString(){
         return numSetupTurns + SEPARATOR + currentSetupTurn;
     }
-
-    public abstract void toString(GameState original);
 }
