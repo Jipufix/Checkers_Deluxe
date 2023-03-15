@@ -13,6 +13,8 @@ import edu.up.cs301.game.GameFramework.infoMessage.GameState;
 import edu.up.cs301.tictactoe.TTTLocalGame;
 import edu.up.cs301.tictactoe.infoMessage.TTTState;
 
+import infoMessage.checkersState;
+
 public abstract class MainActivity extends GameMainActivity {
 
     Button button = findViewById(R.id.run_test);
@@ -23,14 +25,14 @@ public abstract class MainActivity extends GameMainActivity {
         editText.clearComposingText();
 
         // *** Instances before any changes/moves are made *** //
-        CheckersState firstInstance = new CheckersState();
-        CheckersState secondInstance = new CheckersState(firstInstance);
+        checkersState firstInstance = new checkersState();
+        checkersState secondInstance = new checkersState(firstInstance);
 
         // *** INSERT METHOD CALLS HERE *** //
 
         // *** Instances after any changes/moves are made *** //
-        CheckersState thirdInstance = new CheckersState();
-        CheckersState fourthInstance = new CheckersState(thirdInstance);
+        checkersState thirdInstance = new checkersState();
+        checkersState fourthInstance = new checkersState(thirdInstance);
 
         /** Prints out the text for both the before and after game
             states and puts it into the multi-line Edit Text */
