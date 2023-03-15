@@ -22,11 +22,20 @@ public abstract class MainActivity extends GameMainActivity {
     public void onClick(View button) {
         editText.clearComposingText();
 
+        // *** Instances before any changes/moves are made *** //
         CheckersState firstInstance = new CheckersState();
-
         CheckersState secondInstance = new CheckersState(firstInstance);
 
+        // *** INSERT METHOD CALLS HERE *** //
 
+        // *** Instances after any changes/moves are made *** //
+        CheckersState thirdInstance = new CheckersState();
+        CheckersState fourthInstance = new CheckersState(thirdInstance);
+
+        /** Prints out the text for both the before and after game
+            states and puts it into the multi-line Edit Text */
+        editText.append(secondInstance.toString());
+        editText.append(fourthInstance.toString());
 
         super.onClick(button);
     }
