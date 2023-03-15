@@ -1,5 +1,14 @@
 package daobject.checkers;
 
+/**
+ * The main activity of the game
+ *
+ * @author   Ashton Char
+ * @author   Eli Marcelino
+ * @author   Matt David
+ * @version  March 2023
+ */
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;

@@ -1,5 +1,14 @@
 package infoMessage;
 
+/**
+ * Contains the state of the game :)
+ *
+ * @author   Ashton Char
+ * @author   Eli Marcelino
+ * @author   Matt David
+ * @version  March 2023
+ */
+
 import daobject.checkers.Tile;
 import edu.up.cs301.game.GameFramework.infoMessage.GameState;
 
