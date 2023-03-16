@@ -23,9 +23,7 @@ public class CheckersState extends GameState {
     private boolean isClicked; //A boolean
     private double timeElapsed;
 
-    /**
-     *  Default constructor for the game state
-     */
+    /** Default constructor for the game state */
     public CheckersState() {
         board = new Tile[HEIGHT][WIDTH];
         isTurn = true; //Allows player 1 to go first
