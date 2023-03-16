@@ -14,22 +14,27 @@ public class Tile {
         EMPTY,
         RED,
         BLACK,
-    }
+    }//Value
 
+    ///////////////////////////////////////////////////
+    // ************ Instance Variables ************* //
+    ///////////////////////////////////////////////////
     private Value inTile;
+    private boolean isKing; //Empty spaces are assumed to be false
 
-    private boolean isKing;
     public Tile() {
         inTile = Value.EMPTY;
         isKing = false;
-    }// default ctor
+    }//default ctor
 
+    /** --- GETTER METHOD --- */
     public Value getInTile() {
         return inTile;
-    }
+    }//getInTile
 
+    /** --- GETTER METHOD --- */
     public boolean isKing() {
         return isKing;
-    }
+    }//isKing
 
-}
+}//Tile

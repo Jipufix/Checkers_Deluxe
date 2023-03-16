@@ -31,11 +31,10 @@ public class CheckersState extends GameState {
         board = new Tile[HEIGHT][WIDTH];
         isTurn = 0;
         timeElapsed = 0;
-    }//ctor
+    }//default ctor
 
     /**
      * Copy constructor of the default game state
-     *
      * @param original   The game state object we are copying over
      */
     public CheckersState(CheckersState original) {
@@ -50,6 +49,10 @@ public class CheckersState extends GameState {
         timeElapsed = original.timeElapsed;
     }//ctor
 
+    /**
+     * Turns all board data into one long string
+     * @return The appended string
+     */
     @Override
     public String toString() {
 
@@ -90,5 +93,23 @@ public class CheckersState extends GameState {
         }
 
         return result;
-    }
-}
+    }//toString
+
+    /**
+     * --- HELPER METHOD ---
+     * Checks the surrounding tiles for valid moves
+     * @return True if valid, false if out of bounds
+     */
+    public boolean validMove () {
+        for (int i = 0; i < HEIGHT; i++) {
+            for (int j = 0; j < WIDTH; j++) {
+                if (i < 0 || j < 0 || i > HEIGHT || j > HEIGHT) {
+                    return false;
+                } else if (board[i][j].getInTile() != Tile.Value.EMPTY){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }//validMove
+}//CheckersState
