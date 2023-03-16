@@ -10,7 +10,6 @@ package daobject.checkers;
  */
 
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
 import edu.up.cs301.game.GameFramework.GameMainActivity;
@@ -23,7 +22,6 @@ import edu.up.cs301.tictactoe.infoMessage.TTTState;
 import infoMessage.CheckersState;
 
 public abstract class MainActivity extends GameMainActivity {
-
     @Override
     public void onClick(View button) {
         //Run Test Button
@@ -31,13 +29,13 @@ public abstract class MainActivity extends GameMainActivity {
             EditText editText = findViewById(R.id.editTextTextMultiLine);
             editText.clearComposingText();
 
-            // *** Instances before any changes/moves are made *** //
+            //Instances before any changes/moves are made
             CheckersState firstInstance = new CheckersState();
             CheckersState secondInstance = new CheckersState(firstInstance);
 
             // *** INSERT METHOD CALLS HERE *** //
 
-            // *** Instances after any changes/moves are made *** //
+            //Instances after any changes/moves are made
             CheckersState thirdInstance = new CheckersState();
             CheckersState fourthInstance = new CheckersState(thirdInstance);
 
@@ -59,4 +57,5 @@ public abstract class MainActivity extends GameMainActivity {
             return new TTTLocalGame();
         return new TTTLocalGame((TTTState) gameState);
     }//LocalGame
-}
+
+}//MainActivity
