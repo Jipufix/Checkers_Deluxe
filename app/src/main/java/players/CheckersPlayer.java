@@ -9,6 +9,8 @@ package players;
  * @version  March 2023
  */
 
+import android.view.View;
+
 import edu.up.cs301.game.GameFramework.GameMainActivity;
 import edu.up.cs301.game.GameFramework.infoMessage.IllegalMoveInfo;
 import edu.up.cs301.game.GameFramework.infoMessage.GameInfo;
@@ -17,24 +19,12 @@ import edu.up.cs301.game.GameFramework.players.GameHumanPlayer;
 import edu.up.cs301.game.GameFramework.utilities.Logger;
 
 public class CheckersPlayer extends GameHumanPlayer implements View.OnTouchListener {
-    /**
-     * constructor
-     *
-     * @param name
-     * 		the player's name
-     * @param layoutId
-     *      the id of the layout to use
-     */
-    public TTTHumanPlayer1(String name, int layoutId) {
-        super(name);
-        this.layoutId = layoutId;
-    }
+    /** Constructor for the CheckersAI */
+    public CheckersPlayer(String name, int layoutId) {super(name);}//ctor
 
     /**
      * Callback method, called when player gets a message
-     *
-     * @param info
-     * 		the message
+     * @param info   The message
      */
     @Override
     public void receiveInfo(GameInfo info) {

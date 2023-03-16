@@ -18,7 +18,7 @@ import edu.up.cs301.game.GameFramework.players.GameComputerPlayer;
 import edu.up.cs301.game.GameFramework.utilities.Logger;
 
 public class CheckersAI extends GameComputerPlayer {
-    /** Constructor for the TTTComputerPlayer1 class */
+    /** Constructor for the CheckersAI */
     public CheckersAI(String name) {
         super(name);
     }//ctor
