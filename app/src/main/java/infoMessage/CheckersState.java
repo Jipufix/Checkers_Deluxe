@@ -65,6 +65,8 @@ public class CheckersState extends GameState {
 
         result += "Time Elapsed: " + timeElapsed + "\n ";
 
+        // toString conversion of the board's content
+
         for (int i = 0; i < HEIGHT; i++) {
             for (int j = 0; j < WIDTH; j++) {
                 String board1 = "";
