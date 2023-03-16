@@ -4,23 +4,17 @@ import edu.up.cs301.game.GameFramework.infoMessage.GameInfo;
 import edu.up.cs301.game.GameFramework.infoMessage.NotYourTurnInfo;
 import edu.up.cs301.game.GameFramework.players.GameComputerPlayer;
 import edu.up.cs301.game.GameFramework.utilities.Logger;
-import edu.up.cs301.tictactoe.tttActionMessage.TTTMoveAction;
 
 public class CheckersAI extends GameComputerPlayer {
-    /*
-     * Constructor for the TTTComputerPlayer1 class
-     */
+    /** Constructor for the TTTComputerPlayer1 class */
     public CheckersAI(String name) {
-        // invoke superclass constructor
-        super(name); // invoke superclass constructor
-    }
+        super(name);
+    }//ctor
 
     /**
-     * Called when the player receives a game-state (or other info) from the
-     * game.
-     *
-     * @param info
-     * 		the message from the game
+     * Called when the player receives a game-state (or other info)
+     * from the game
+     * @param info   The message from the game
      */
     @Override
     protected void receiveInfo(GameInfo info) {
@@ -41,8 +35,6 @@ public class CheckersAI extends GameComputerPlayer {
         // we'll get a message back that we'll ignore. If it was an illegal move,
         // we'll end up here again (and possibly again, and again). At some point,
         // we'll end up randomly pick a move that is legal.
-        Logger.log("TTTComputer", "Sending move");
-        game.sendAction(new TTTMoveAction(this, yVal, xVal));
 
-    }
+    }//recieveInfo
 }
