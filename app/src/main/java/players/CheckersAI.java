@@ -1,5 +1,17 @@
 package players;
 
+/**
+ * The "computer players" of the game with 2 types
+ *      DUMB AI: Plays first possible move going from bottom to top
+ *      SMART AI: Looks for moves the maximizes piece capture and
+ *          avoids moving the back row
+ *
+ * @author   Ashton Char
+ * @author   Eli Marcelino
+ * @author   Matt David
+ * @version  March 2023
+ */
+
 import edu.up.cs301.game.GameFramework.infoMessage.GameInfo;
 import edu.up.cs301.game.GameFramework.infoMessage.NotYourTurnInfo;
 import edu.up.cs301.game.GameFramework.players.GameComputerPlayer;
