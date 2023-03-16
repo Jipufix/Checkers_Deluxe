@@ -16,9 +16,7 @@ public class Tile {
         BLACK,
     }//Value
 
-    ///////////////////////////////////////////////////
-    // ************ Instance Variables ************* //
-    ///////////////////////////////////////////////////
+    // Instance Variables //
     private Value inTile;
     private boolean isKing; //Empty spaces are assumed to be false
 

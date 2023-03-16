@@ -17,11 +17,10 @@ public class CheckersState extends GameState {
     // Board Dimensions //
     private static final int WIDTH = 8, HEIGHT = 8;
 
-    ///////////////////////////////////////////////////
-    // ************ Instance Variables ************* //
-    ///////////////////////////////////////////////////
+    // Instance Variables //
     private Tile[][] board;
-    private int isTurn; // 0 if Red's Turn, 1 if Black's Turn
+    private boolean isTurn; //true if P1's Turn, false if P2's turn
+    private boolean isClicked; //A boolean
     private double timeElapsed;
 
     /**
@@ -29,7 +28,8 @@ public class CheckersState extends GameState {
      */
     public CheckersState() {
         board = new Tile[HEIGHT][WIDTH];
-        isTurn = 0;
+        isTurn = true; //Allows player 1 to go first
+        isClicked = false;
         timeElapsed = 0;
     }//default ctor
 
@@ -46,6 +46,7 @@ public class CheckersState extends GameState {
         }
 
         isTurn = original.isTurn;
+        isClicked = original.isClicked;
         timeElapsed = original.timeElapsed;
     }//ctor
 
@@ -55,11 +56,10 @@ public class CheckersState extends GameState {
      */
     @Override
     public String toString() {
-
         String result = "PlayerTurn: ";
-        if (isTurn == 0) {
+        if (isTurn == true) {
             result += "Red's turn";
-        } else if (isTurn == 1) {
+        } else if (!isTurn) {
             result += "Black's turn";
         } else {
             result += "Invalid option";
@@ -68,8 +68,7 @@ public class CheckersState extends GameState {
 
         result += "Time Elapsed: " + timeElapsed + "\n ";
 
-        // toString conversion of the board's content
-
+        // Actual conversion of the board's content
         for (int i = 0; i < HEIGHT; i++) {
             for (int j = 0; j < WIDTH; j++) {
                 String board1 = "";
@@ -112,4 +111,5 @@ public class CheckersState extends GameState {
         }
         return true;
     }//validMove
+
 }//CheckersState
