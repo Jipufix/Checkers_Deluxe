@@ -1,6 +1,6 @@
 package infoMessage;
 
-/**
+/*
  * Contains the state of the game :)
  *
  * @author   Ashton Char
@@ -9,8 +9,12 @@ package infoMessage;
  * @version  March 2023
  */
 
-import daobject.checkers.Tile;
+import androidx.annotation.NonNull;
+
 import edu.up.cs301.game.GameFramework.infoMessage.GameState;
+
+import daobject.checkers.Tile;
+
 
 public class CheckersState extends GameState {
 
@@ -38,9 +42,7 @@ public class CheckersState extends GameState {
     public CheckersState(CheckersState original) {
         board = new Tile[HEIGHT][WIDTH];
         for (int i = 0; i < HEIGHT; i++) {
-            for (int j = 0; j < WIDTH; j++) {
-                board[i][j] = original.board[i][j];
-            }
+            System.arraycopy(original.board[i], 0, board[i], 0, WIDTH);
         }
 
         isTurn = original.isTurn;
@@ -52,15 +54,14 @@ public class CheckersState extends GameState {
      * Turns all board data into one long string
      * @return The appended string
      */
+    @NonNull
     @Override
     public String toString() {
         String result = "PlayerTurn: ";
-        if (isTurn == true) {
+        if (isTurn) {
             result += "Red's turn";
         } else if (!isTurn) {
             result += "Black's turn";
-        } else {
-            result += "Invalid option";
         }
         result += "\n ";
 
@@ -97,15 +98,11 @@ public class CheckersState extends GameState {
      * Checks the surrounding tiles for valid moves
      * @return True if valid, false if out of bounds
      */
-    public boolean validMove () {
-        for (int i = 0; i < HEIGHT; i++) {
-            for (int j = 0; j < WIDTH; j++) {
-                if (i < 0 || j < 0 || i > HEIGHT || j > HEIGHT) {
-                    return false;
-                } else if (board[i][j].getInTile() != Tile.Value.EMPTY){
-                    return false;
-                }
-            }
+    public boolean validMove (int row, int col) {
+        if (row < 0 || col < 0 || row > HEIGHT || col > HEIGHT) {
+            return false;
+        } else if (board[row][col].getInTile() != Tile.Value.EMPTY) {
+            return false;
         }
         return true;
     }//validMove
