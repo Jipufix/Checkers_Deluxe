@@ -107,4 +107,13 @@ public class CheckersState extends GameState {
         return true;
     }//validMove
 
+    // *** RESET *** //
+
+    // *** DRAW *** //
+
+    // *** BACK *** //
+
+    // *** MOVE PIECE *** //
+
+    
 }//CheckersState
