@@ -14,6 +14,8 @@ public class Tile {
         EMPTY,
         RED,
         BLACK,
+
+        AVAIL,
     }//Value
 
     // Instance Variables //
@@ -24,8 +26,11 @@ public class Tile {
         inTile = Value.EMPTY;
         isKing = false;
     }//default ctor
-    /** Flips the value of kings */
-    public void toggleKing(Boolean givenKing) {isKing = !givenKing}//toggleKing
+
+    /** Sets the value of kings */
+    public void trueKing(Boolean givenKing) {isKing = true;}//toggleKing
+
+    public void falseKing(Boolean givenKing) {isKing = false;}//toggleKing
 
     /** --- GETTER METHOD --- */
     public Value getInTile() {

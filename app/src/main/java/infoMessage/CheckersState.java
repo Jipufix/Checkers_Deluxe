@@ -108,8 +108,21 @@ public class CheckersState extends GameState {
     }//validMove
 
     // *** RESET *** //
+    public boolean resetBoard() {
 
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+
+                if (i < 3) {
+                    board[i][j].
+                }
+                else if (i > 8)
+            }
+        }
+    }
     // *** DRAW *** //
+
+
 
     // *** BACK *** //
 
