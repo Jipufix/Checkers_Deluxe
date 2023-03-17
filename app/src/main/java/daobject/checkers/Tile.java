@@ -24,15 +24,20 @@ public class Tile {
         inTile = Value.EMPTY;
         isKing = false;
     }//default ctor
+    /** Flips the value of kings */
+    public void toggleKing(Boolean givenKing) {isKing = !givenKing}//toggleKing
 
     /** --- GETTER METHOD --- */
     public Value getInTile() {
         return inTile;
-    }//getInTile
+    }//getValue
 
     /** --- GETTER METHOD --- */
     public boolean isKing() {
         return isKing;
     }//isKing
+
+    /** --- SETTER METHOD --- */
+    public void setInTile(Value value) {inTile = value;}//setValue
 
 }//Tile
