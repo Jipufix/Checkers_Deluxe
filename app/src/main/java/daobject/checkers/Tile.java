@@ -21,8 +21,8 @@ public class Tile {
     // Instance Variables //
     private Value inTile;
     private boolean isKing; //Empty spaces are assumed to be false
-    private int row;
-    private int col;
+    private final int row;
+    private final int col;
 
     public Tile(int row, int col) {
         inTile = Value.EMPTY;

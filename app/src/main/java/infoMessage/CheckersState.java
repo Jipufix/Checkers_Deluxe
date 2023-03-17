@@ -31,6 +31,7 @@ public class CheckersState extends GameState {
     public CheckersState() {
         for (int i = 0; i < HEIGHT; i++) {
             for (int j = 0; j < WIDTH; j++) {
+                assert false;
                 board[i][j] = new Tile(i, j);
             }
         }
@@ -64,7 +65,7 @@ public class CheckersState extends GameState {
         String result = "PlayerTurn: ";
         if (isTurn) {
             result += "Red's turn";
-        } else if (!isTurn) {
+        } else {
             result += "Black's turn";
         }
         result += "\n ";
@@ -100,6 +101,8 @@ public class CheckersState extends GameState {
     /**
      * --- HELPER METHOD ---
      * Checks the surrounding tiles for valid moves
+     *
+     *  *** To be used in all subsequent non-helper methods ***
      * @return True if valid, false if out of bounds
      */
     public boolean validMove (int row, int col) {
@@ -111,8 +114,10 @@ public class CheckersState extends GameState {
         return true;
     }//validMove
 
-    // *** RESET *** //
-    public boolean resetBoard() {
+    /**
+     * Resets the board back to its original state
+     */
+    public void resetBoard() {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 board[i][j].setKing(false);
@@ -127,14 +132,13 @@ public class CheckersState extends GameState {
                 }
             }
         }
-        return true;
-    }
+    }//resetBoard
 
     public boolean drawGame() {
         // add Draw Message
         resetBoard();
         return true;
-    }
+    }//drawGame
 
     /**
      * Swaps the position of two given pieces under the assumption that
