@@ -112,7 +112,7 @@ public class CheckersState extends GameState {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 board[i][j].setKing(false);
-                if (i < 4 && j % 2 != 0) {
+                if (i < 3 && j % 2 != 0) {
                     board[i][j].setInTile(Tile.Value.RED);
                 }
                 else if (i > 4 && j % 2 == 0) {
