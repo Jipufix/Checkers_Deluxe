@@ -28,9 +28,7 @@ public class Tile {
     }//default ctor
 
     /** Sets the value of kings */
-    public void trueKing(Boolean givenKing) {isKing = true;}//toggleKing
-
-    public void falseKing(Boolean givenKing) {isKing = false;}//toggleKing
+    public void setKing(Boolean givenKing) {isKing = givenKing;} //toggleKing
 
     /** --- GETTER METHOD --- */
     public Value getInTile() {
