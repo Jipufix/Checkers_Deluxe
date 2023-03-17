@@ -109,22 +109,30 @@ public class CheckersState extends GameState {
 
     // *** RESET *** //
     public boolean resetBoard() {
-
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
-
+                board[i][j].setKing(false);
                 if (i < 3) {
-                    board[i][j].
+                    board[i][j].setInTile(Tile.Value.RED);
                 }
-                else if (i > 8)
+                else if (i > 5) {
+                    board[i][j].setInTile(Tile.Value.BLACK);
+                }
+                else {
+                    board[i][j].setInTile(Tile.Value.EMPTY);
+                }
             }
         }
+        return true;
     }
     // *** DRAW *** //
 
+    public boolean drawGame() {
+        // add Draw Message
+        resetBoard();
+        return true;
+    }
 
-
-    // *** BACK *** //
 
     // *** MOVE PIECE *** //
 
