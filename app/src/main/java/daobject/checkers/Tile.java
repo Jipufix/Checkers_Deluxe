@@ -32,15 +32,21 @@ public class Tile {
     }//ctor
 
     /** --- GETTER METHOD --- */
-    public Value getInTile() {return inTile;}//getValue
+    public Value getInTile() {return inTile;}//getInTile
 
     /** --- GETTER METHOD --- */
-    public boolean getKing() {return isKing;}//isKing
+    public boolean getKing() {return isKing;}//getKing
+
+    /** --- GETTER METHOD --- */
+    public int getRow() {return row;}//getKing
+
+    /** --- GETTER METHOD --- */
+    public int getCol() {return col;}//getCol
 
     /** --- SETTER METHOD --- */
-    public void setInTile(Value value) {inTile = value;}//setValue
+    public void setInTile(Value value) {inTile = value;}//setInTile
 
     /** --- SETTER METHOD --- */
-    public void setKing(Boolean givenKing) {isKing = givenKing;} //toggleKing
+    public void setKing(Boolean givenKing) {isKing = givenKing;} //setKing
 
 }//Tile

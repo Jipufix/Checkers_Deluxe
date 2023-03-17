@@ -137,16 +137,23 @@ public class CheckersState extends GameState {
     }
 
     /**
-     * Swaps the position of two given pieces
+     * Swaps the position of two given pieces under the assumption that
+     * piece2 will always be a blank spot
      * @param piece1   The initial piece clicked that needs to be moved
      * @param piece2   The blank space the piece will move to
      * @return         Returns true if the swap worked
      */
     public boolean swapPieces(Tile piece1, Tile piece2) {
-
+        if (!validMove(piece1.getRow(), piece1.getCol())) {
+            return false;
+        }
         //Start putting piece1's data into piece2
         piece2.setInTile(piece1.getInTile());
-        if (piece1.getKing()) {piece2.setKing(true);}//Works only if piece1 is a king
+        if (piece1.getKing()) {piece2.setKing(true);}
+
+        //Make piece1 empty
+        piece1.setInTile(Tile.Value.EMPTY);
+        piece1.setKing(false);
 
         return true;
     }//swapPieces
