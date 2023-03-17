@@ -12,6 +12,8 @@ package daobject.checkers;
 import android.view.View;
 import android.widget.EditText;
 
+import java.io.Serializable;
+
 import edu.up.cs301.game.GameFramework.GameMainActivity;
 import edu.up.cs301.game.GameFramework.LocalGame;
 import edu.up.cs301.game.GameFramework.gameConfiguration.GameConfig;
@@ -21,7 +23,7 @@ import edu.up.cs301.tictactoe.infoMessage.TTTState;
 
 import infoMessage.CheckersState;
 
-public abstract class MainActivity extends GameMainActivity {
+public abstract class MainActivity extends GameMainActivity implements Serializable {
     @Override
     public void onClick(View button) {
         //Run Test Button
