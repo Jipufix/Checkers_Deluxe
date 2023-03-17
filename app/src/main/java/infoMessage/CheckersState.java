@@ -29,11 +29,7 @@ public class CheckersState extends GameState {
 
     /** Default constructor for the game state */
     public CheckersState() {
-        for (int i = 0; i < HEIGHT; i++) {
-            for (int j = 0; j < WIDTH; j++) {
-                board[i][j] = new Tile(i, j);
-            }
-        }
+        board = new Tile[HEIGHT][WIDTH];
         isTurn = true; //Allows player 1 to go first
         isClicked = false;
         timeElapsed = 0;
@@ -64,7 +60,7 @@ public class CheckersState extends GameState {
         String result = "PlayerTurn: ";
         if (isTurn) {
             result += "Red's turn";
-        } else {
+        } else if (!isTurn) {
             result += "Black's turn";
         }
         result += "\n ";
@@ -100,8 +96,6 @@ public class CheckersState extends GameState {
     /**
      * --- HELPER METHOD ---
      * Checks the surrounding tiles for valid moves
-     *
-     *  *** To be used in all subsequent non-helper methods ***
      * @return True if valid, false if out of bounds
      */
     public boolean validMove (int row, int col) {
@@ -113,55 +107,34 @@ public class CheckersState extends GameState {
         return true;
     }//validMove
 
-//    /**
-//     * Resets the board back to its original state
-//     */
-//    public void resetBoard() {
-//        for (int i = 0; i < 8; i++) {
-//            for (int j = 0; j < 8; j++) {
-//                board[i][j].setKing(false);
-//                if (i < 3 && j % 2 != 0) {
-//                    board[i][j].setInTile(Tile.Value.RED);
-//                }
-//                else if (i > 4 && j % 2 == 0) {
-//                    board[i][j].setInTile(Tile.Value.BLACK);
-//                }
-//                else {
-//                    board[i][j].setInTile(Tile.Value.EMPTY);
-//                }
-//            }
-//        }
-//    }//resetBoard
-//
-//    public boolean drawGame() {
-//        // add Draw Message
-//        resetBoard();
-//        return true;
-//    }//drawGame
-
-    /**
-     * Swaps the position of two given pieces under the assumption that
-     * piece2 will always be a blank spot
-     * @param piece1   The initial piece clicked that needs to be moved
-     * @param currEmpty   The blank space the piece will move to
-     * @return         Returns true if the swap worked
-     */
-    public boolean swapPieces(Tile piece1, Tile currEmpty) {
-        if (!validMove(piece1.getRow(), piece1.getCol())) {
-            return false;
+    // *** RESET *** //
+    public boolean resetBoard() {
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                board[i][j].setKing(false);
+                if (i < 4 && j % 2 != 0) {
+                    board[i][j].setInTile(Tile.Value.RED);
+                }
+                else if (i > 4 && j % 2 == 0) {
+                    board[i][j].setInTile(Tile.Value.BLACK);
+                }
+                else {
+                    board[i][j].setInTile(Tile.Value.EMPTY);
+                }
+            }
         }
-        //Start putting piece1's data into piece2
-        currEmpty.setInTile(piece1.getInTile());
-        if (piece1.getKing()) {currEmpty.setKing(true);}
-
-        //Make piece1 empty
-        piece1.setInTile(Tile.Value.EMPTY);
-        piece1.setKing(false);
-
         return true;
-    }//swapPieces
+    }
+    // *** DRAW *** //
 
-    /** --- GETTER METHOD --- */
-    public Tile[][] getBoard () {return board;}//getBoard
+    public boolean drawGame() {
+        // add Draw Message
+        resetBoard();
+        return true;
+    }
 
+
+    // *** MOVE PIECE *** //
+
+    
 }//CheckersState
