@@ -26,14 +26,18 @@ public abstract class MainActivity extends GameMainActivity {
     public void onClick(View button) {
         //Run Test Button
         if (button.getId() == R.id.run_test) {
-            EditText editText = findViewById(R.id.editTextTextMultiLine);
-            editText.clearComposingText();
+            //EditText editText = findViewById(R.id.editTextTextMultiLine);
+            //editText.clearComposingText();
 
             //Instances before any changes/moves are made
             CheckersState firstInstance = new CheckersState();
             CheckersState secondInstance = new CheckersState(firstInstance);
 
-            // *** INSERT METHOD CALLS HERE *** //
+            //The simulated turn will now begin here moving one black piece
+            Tile[][] tempBoard = firstInstance.getBoard();
+            firstInstance.swapPieces(tempBoard[0][3], tempBoard[1][4]);
+            //editText.append("Player 1 (black) has moved their first piece");
+
 
             //Instances after any changes/moves are made
             CheckersState thirdInstance = new CheckersState();
@@ -41,8 +45,8 @@ public abstract class MainActivity extends GameMainActivity {
 
             // Prints out the text for both the before and after game
             // states and puts it into the multi-line Edit Text
-            editText.append(secondInstance.toString());
-            editText.append(fourthInstance.toString());
+            //editText.append(secondInstance.toString());
+            //editText.append(fourthInstance.toString());
         }
     }//onClick
 
