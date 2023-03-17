@@ -112,7 +112,7 @@ public class CheckersState extends GameState {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 board[i][j].setKing(false);
-                if (i < 4 && j % 2 != 0) {
+                if (i < 3 && j % 2 != 0) {
                     board[i][j].setInTile(Tile.Value.RED);
                 }
                 else if (i > 4 && j % 2 == 0) {
@@ -127,14 +127,40 @@ public class CheckersState extends GameState {
     }
     // *** DRAW *** //
 
+
     public boolean drawGame() {
         // add Draw Message
         resetBoard();
         return true;
     }
 
+    /**
+     * Swaps the position of two given pieces under the assumption that
+     * piece2 will always be a blank spot
+     * @param piece1   The initial piece clicked that needs to be moved
+     * @param piece2   The blank space the piece will move to
+     * @return         Returns true if the swap worked
+     */
+    public boolean swapPieces(Tile piece1, Tile piece2) {
+        if (!validMove(piece1.getRow(), piece1.getCol())) {
+            return false;
+        }
+        //Start putting piece1's data into piece2
+        piece2.setInTile(piece1.getInTile());
+        if (piece1.getKing()) {piece2.setKing(true);}
+
+        //Make piece1 empty
+        piece1.setInTile(Tile.Value.EMPTY);
+        piece1.setKing(false);
+
+        return true;
+    }//swapPieces
 
     // *** MOVE PIECE *** //
 
-    
+    /** --- GETTER METHOD --- */
+
+    public Tile[][] getBoard() {return board;}
+
+
 }//CheckersState

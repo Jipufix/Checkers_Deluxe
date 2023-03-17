@@ -49,4 +49,6 @@ public class Tile {
     /** --- SETTER METHOD --- */
     public void setKing(Boolean givenKing) {isKing = givenKing;} //setKing
 
+
+
 }//Tile
