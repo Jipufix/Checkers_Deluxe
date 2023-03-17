@@ -29,7 +29,11 @@ public class CheckersState extends GameState {
 
     /** Default constructor for the game state */
     public CheckersState() {
-        board = new Tile[HEIGHT][WIDTH];
+        for (int i = 0; i < HEIGHT; i++) {
+            for (int j = 0; j < WIDTH; j++) {
+                board[i][j] = new Tile(i, j);
+            }
+        }
         isTurn = true; //Allows player 1 to go first
         isClicked = false;
         timeElapsed = 0;
@@ -125,7 +129,6 @@ public class CheckersState extends GameState {
         }
         return true;
     }
-    // *** DRAW *** //
 
     public boolean drawGame() {
         // add Draw Message
@@ -133,8 +136,19 @@ public class CheckersState extends GameState {
         return true;
     }
 
+    /**
+     * Swaps the position of two given pieces
+     * @param piece1   The initial piece clicked that needs to be moved
+     * @param piece2   The blank space the piece will move to
+     * @return         Returns true if the swap worked
+     */
+    public boolean swapPieces(Tile piece1, Tile piece2) {
 
-    // *** MOVE PIECE *** //
+        //Start putting piece1's data into piece2
+        piece2.setInTile(piece1.getInTile());
+        if (piece1.getKing()) {piece2.setKing(true);}//Works only if piece1 is a king
 
-    
+        return true;
+    }//swapPieces
+
 }//CheckersState
