@@ -31,7 +31,6 @@ public class CheckersState extends GameState {
     public CheckersState() {
         for (int i = 0; i < HEIGHT; i++) {
             for (int j = 0; j < WIDTH; j++) {
-                assert false;
                 board[i][j] = new Tile(i, j);
             }
         }

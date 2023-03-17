@@ -39,8 +39,8 @@ public abstract class MainActivity extends GameMainActivity {
             CheckersState thirdInstance = new CheckersState();
             CheckersState fourthInstance = new CheckersState(thirdInstance);
 
-            /* Prints out the text for both the before and after game
-             states and puts it into the multi-line Edit Text */
+            // Prints out the text for both the before and after game
+            // states and puts it into the multi-line Edit Text
             editText.append(secondInstance.toString());
             editText.append(fourthInstance.toString());
         }
