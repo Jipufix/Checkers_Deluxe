@@ -1,6 +1,6 @@
 package daobject.checkers;
 
-/**
+/*
  * The individual tiles on the board
  *
  * @author   Ashton Char

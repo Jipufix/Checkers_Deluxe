@@ -20,7 +20,7 @@ public class TTTState extends GameState implements Serializable {
 	private static final long serialVersionUID = 7552321013488624386L;
 
     ///////////////////////////////////////////////////
-    // ************** instance variables ************
+    // ************** Instance Variables ************
     ///////////////////////////////////////////////////
 	
 	// the 3x3 array of char that represents the X's and O's on the board

@@ -1,6 +1,6 @@
 package players;
 
-/**
+/*
  * The "computer players" of the game with 2 types
  *      DUMB AI: Plays first possible move going from bottom to top
  *      SMART AI: Looks for moves the maximizes piece capture and
