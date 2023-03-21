@@ -1,4 +1,4 @@
-package daobject.checkers;
+package daobjectcopy.checkers.checkers;
 
 /*
  * The main activity of the game
@@ -10,10 +10,10 @@ package daobject.checkers;
  */
 
 import android.view.View;
-import android.widget.EditText;
 
 import java.io.Serializable;
 
+import daobject.checkers.R;
 import edu.up.cs301.game.GameFramework.GameMainActivity;
 import edu.up.cs301.game.GameFramework.LocalGame;
 import edu.up.cs301.game.GameFramework.gameConfiguration.GameConfig;
@@ -21,7 +21,7 @@ import edu.up.cs301.game.GameFramework.infoMessage.GameState;
 import edu.up.cs301.tictactoe.TTTLocalGame;
 import edu.up.cs301.tictactoe.infoMessage.TTTState;
 
-import infoMessage.CheckersState;
+import daobjectcopy.checkers.infoMessage.CheckersState;
 
 public abstract class MainActivity extends GameMainActivity implements Serializable {
     @Override

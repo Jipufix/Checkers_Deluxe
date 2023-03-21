@@ -1,4 +1,4 @@
-package daobject.checkers;
+package daobjectcopy.checkers.checkers;
 
 /*
  * The individual tiles on the board

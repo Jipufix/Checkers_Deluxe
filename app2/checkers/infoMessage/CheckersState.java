@@ -1,4 +1,4 @@
-package infoMessage;
+package daobjectcopy.checkers.infoMessage;
 
 /*
  * Contains the state of the game :)

@@ -1,4 +1,4 @@
-package players;
+package daobjectcopy.checkers.players;
 
 /*
  * The "computer players" of the game with 2 types

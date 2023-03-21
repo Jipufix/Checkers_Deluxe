@@ -1,4 +1,4 @@
-package daobject.checkers;
+package daobjectcopy.checkers.checkers;
 
 import android.content.Context;
 

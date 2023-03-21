@@ -1,4 +1,4 @@
-package daobject.checkers;
+package daobjectcopy.checkers;
 
 import org.junit.Test;
 
